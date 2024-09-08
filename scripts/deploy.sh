@@ -23,8 +23,8 @@ if [ ! -d $DEPLOY_TARGET ]; then
 fi
 
 while [ ! -d $DEPLOY_TARGET ]; do sleep .25; done
+sleep 1
 
 cat $DEPLOY_TARGET/INFO_UF2.TXT || (echo "[ERROR] Incorrect target! Aborted." && exit 1)
 
-sleep 1
 cp $UF2_FILE "$DEPLOY_TARGET/"
